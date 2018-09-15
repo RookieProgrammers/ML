@@ -1,0 +1,8 @@
+Read CSV Files idnex col = ID
+Import libarary 
+Retreive features and targets
+Merge x_train_features and x_test_featrues to x_featrues
+Differentiate object and num featrues from x_features and get their names in tow lists
+Imput missing values in x_num features and drop features with missing values(that means drop object features with missing values)
+Find object features with nunique smaller than constant c: 
+      low_cardinality_cols = [cname for cname in data_x.columns if data_x[cname].nunique()<10 and data_x[cname].dtype == "object"]
