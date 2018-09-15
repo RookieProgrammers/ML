@@ -6,3 +6,9 @@ Differentiate object and num featrues from x_features and get their names in tow
 Imput missing values in x_num features and drop features with missing values(that means drop object features with missing values)
 Find object features with nunique smaller than constant c: 
       low_cardinality_cols = [cname for cname in data_x.columns if data_x[cname].nunique()<10 and data_x[cname].dtype == "object"]
+Make a slice with new list [my_col = list(numeric_cols) + low_cardinality_cols]
+Using slice to make x_features: data_x = data_x[my_col]
+one hot encoder: one_hot_encoder_x = pd.get_dummies(data_x)
+Separate X_test and X_train: new_x_test = one_hot_encoder_x.iloc[1460:,:]
+                             one_hot_encoder_x = one_hot_encoder_x.iloc[:1460,:]
+Import model fit and predict
